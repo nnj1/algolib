@@ -18,10 +18,10 @@ class UF:
             if p in bundle and q in bundle:
                 return True
         return False
-    def rmDuplicates():
+    def rmDuplicates(self):
         s = []
         for bundle in self.stack:
-            for i in bundle
+            for i in bundle:
                 if i not in s:
                     s.append(i)
             bundle = s
@@ -32,4 +32,4 @@ class UF:
 Machine = UF()
 Machine.union(1, 4)
 Machine.union(4, 2)
-print Machine.connection(1, 9)
+print Machine.connection(1, 2)
