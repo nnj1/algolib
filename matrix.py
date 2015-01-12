@@ -50,6 +50,21 @@ class Matrix:
         for row in self.mat:
             column.append(row[cn - 1])
         return column
+    def setElement(self, row, column, v):
+        self.mat[row - 1][column - 1] = v
+    def dotProduct(self, a, b):
+        sum = 0
+        for i, val in enumerate(a):
+            sum += (val + b[i])
+        return sum
+    def multiply(self, b):
+        if self.c == b.r:
+            pmat = []
+            for i, row in enumerate(self.mat, start=1):
+                pmat.append([])
+                for j, item in enumerate(row, start=1):
+                    pmat[i - 1].append(self.dotProduct(self.getRow(i), b.getColumn(j)))
+            return Matrix(pmat)
 # usage
 matrix1 = Matrix([[1,1,1],[0,0,0],[2,3,4]])
 print "Initialized Matrix:"
@@ -70,3 +85,6 @@ matrix3.prettyPrint()
 print "Element in 3rd row and 3rd column: " + str(matrix3.getElement(3,3))
 print '3rd Row: ' + str(matrix3.getRow(3))
 print '3rd Column: ' + str(matrix3.getColumn(3))
+
+print "Product:"
+print str(matrix3.multiply(matrix2).prettyPrint())
