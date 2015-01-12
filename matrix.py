@@ -41,6 +41,15 @@ class Matrix:
                 self.mat[i][j] = k * element
                 j += 1
             i += 1
+    def getElement(self, row, column):
+        return self.mat[row - 1][column - 1]
+    def getRow(self, row):
+        return self.mat[row - 1]
+    def getColumn(self, cn):
+        column = []
+        for row in self.mat:
+            column.append(row[cn - 1])
+        return column
 # usage
 matrix1 = Matrix([[1,1,1],[0,0,0],[2,3,4]])
 print "Initialized Matrix:"
@@ -57,3 +66,7 @@ matrix2.prettyPrint()
 matrix3 = matrix1.add(matrix2)
 print "Sum:"
 matrix3.prettyPrint()
+
+print "Element in 3rd row and 3rd column: " + str(matrix3.getElement(3,3))
+print '3rd Row: ' + str(matrix3.getRow(3))
+print '3rd Column: ' + str(matrix3.getColumn(3))
