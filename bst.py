@@ -13,6 +13,10 @@ class BinaryNode:
         self.rightChild = node
     def addDuplicate(self, node):
         self.duplicates.append(node)
+    def hasChildren(self):
+        if self.leftChild or self.rightChild:
+            return True
+        return False
     
 class BinaryTree:
     # Provide a root node to the constructor
@@ -55,6 +59,10 @@ class BinaryTree:
             return curNode
     # Get tree as a sorted array
     def getSorted(self):
+        self.__inorder(self.root)
+        pass
+    # traverse tree in order
+    def __inorder(self, tree):
         pass
     # Get leftmost node
     def getLeftmost(self):
