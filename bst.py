@@ -5,6 +5,7 @@ class BinaryNode:
         self.content.append(thing)
         self.leftChild = None
         self.rightChild = None
+        self.parent = None
         self.duplicates = []
     def addLeftChild(self, node):
         self.leftChild = node
@@ -27,12 +28,14 @@ class BinaryTree:
     def __traverseAdd(self, newNode, curNode):
         if newNode.value < curNode.value:
             if curNode.leftChild == None:
+                newNode.parent = curNode
                 curNode.leftChild = newNode
                 print "Added " + str(newNode.value) + " as left child of " + str(curNode.value)
             else:
                 self.__traverseAdd(newNode, curNode.leftChild)
         elif newNode.value > curNode.value:
             if curNode.rightChild == None:
+                newNode.parent = curNode
                 curNode.rightChild = newNode
                 print "Added " + str(newNode.value) + " as right child of " + str(curNode.value)
             else:
@@ -50,7 +53,39 @@ class BinaryTree:
             return self.__traverseFind(value, curNode.rightChild)
         else:
             return curNode
-        
+    # Get tree as a sorted array
+    def getSorted(self):
+        pass
+    # Get leftmost node
+    def getLeftmost(self):
+        node = self.root
+        while node.leftChild != None or node.rightChild != None:
+            if node.leftChild != None:
+                node = node.leftChild
+            else:
+                node = node.rightChild
+        return node
+    # Get leftmost node
+    def getRightmost(self):
+        node = self.root
+        while node.rightChild != None or node.leftChild != None:
+            if node.rightChild != None:
+                node = node.rightChild
+            else:
+                node = node.leftChild
+        return node
+    # Get max value node
+    def getMax(self):
+        node = self.root
+        while node.rightChild != None:
+            node = node.rightChild
+        return node
+    # Get min value node
+    def getMin(self):
+        node = self.root
+        while node.leftChild != None:
+            node = node.leftChild
+        return node
 
 # Create a some nodes
 a = BinaryNode(1,'apple')
