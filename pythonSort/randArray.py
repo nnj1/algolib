@@ -1,6 +1,6 @@
 #!/bin/pyhton3
 """
-Simple script that returns a list of size n filled with random values within 
+Simple script that returns a list of size n filled with random values within
 a provided limit
 """
 import random
@@ -11,9 +11,7 @@ def createRandArray(n, lim):
         temp.append(random.randrange(lim))
     return temp
 
-"""
-Usage
-"""
 
+# Usage
 if __name__ == '__main__':
     print(createRandArray(10, 100))
