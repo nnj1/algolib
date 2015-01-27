@@ -1,0 +1,4 @@
+# Added simple rules for ignoring python 3 binaries and swp files
+
+pythonSort/__pycache__/
+pythonSort/*.py.swp
