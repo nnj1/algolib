@@ -1,3 +1,5 @@
+import random
+
 class Sorter():
     def mergeSort(self, x):
         n = len(x)
@@ -27,8 +29,6 @@ class Sorter():
                 a.pop(0)
                 b.pop(0)
         return c
-        
-import random
 
     def quickSort(self, x, lo = 0, hi = None):
         if hi == None:
@@ -57,7 +57,7 @@ import random
         x[si] = x[hi]
         x[hi] = temp
         return si
-    def self.choosePivot(self, x, lo, hi):
+    def choosePivot(self, x, lo, hi):
         return random.randint(lo, hi)
     
 # usage
