@@ -27,9 +27,42 @@ class Sorter():
                 a.pop(0)
                 b.pop(0)
         return c
+        
+import random
+
+    def quickSort(self, x, lo = 0, hi = None):
+        if hi == None:
+            hi = len(x) - 1
+        if lo < hi:
+            p = self.partition(x, lo, hi)
+            self.quickSort(x, lo, p - 1)
+            self.quickSort(x, p + 1, hi)
+        return x
+    def partition(self, x, lo, hi):
+        pi = self.choosePivot(x, lo, hi)
+        pv = x[pi]
+        temp = x[pi]
+        x[pi] = x[hi]
+        x[hi] = temp
+        si = lo
+        i = lo
+        while i < hi:
+            if x[i] < pv:
+                temp = x[i]
+                x[i] = x[si]
+                x[si] = temp
+                si += 1
+            i += 1
+        temp = x[si]
+        x[si] = x[hi]
+        x[hi] = temp
+        return si
+    def self.choosePivot(self, x, lo, hi):
+        return random.randint(lo, hi)
     
 # usage
 sorter = Sorter()
 
 # merge sort
 print sorter.mergeSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
+print sorter.quickSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
