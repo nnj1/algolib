@@ -1,6 +1,21 @@
 import random
 
 class Sorter():
+    def insertionSort(self, a):
+        curri = 1
+        while curri < len(a):
+            j = curri
+            q = curri
+            while j >= 0:
+                if a[q] < a[j]:
+                    temp = a[j]
+                    a[j] = a[q]
+                    a[q] = temp
+                    q -= 1
+                j -= 1
+            curri += 1
+        return a
+        
     def mergeSort(self, x):
         n = len(x)
         if n == 1:
@@ -66,3 +81,4 @@ sorter = Sorter()
 # merge sort
 print sorter.mergeSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 print sorter.quickSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
+print sorter.insertionSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
