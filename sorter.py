@@ -74,6 +74,27 @@ class Sorter():
         return si
     def choosePivot(self, x, lo, hi):
         return random.randint(lo, hi)
+        
+    def selectionSort(self, a):
+        n = len(a)
+        i = 0
+        while i < n:
+            k = self.findMin(i, a)
+            temp = a[i]
+            a[i] = a[k]
+            a[k] = temp
+            i += 1
+        return a
+    def findMin(self, n, a):
+        i = n
+        min = a[n]
+        mini = n
+        while i < len(a):
+            if a[i] < min:
+                min = a[i]
+                mini = i
+            i += 1
+        return mini
     
 # usage
 sorter = Sorter()
@@ -82,3 +103,4 @@ sorter = Sorter()
 print sorter.mergeSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 print sorter.quickSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 print sorter.insertionSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
+print sorter.selectionSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
