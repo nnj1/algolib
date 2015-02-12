@@ -96,11 +96,31 @@ class Sorter():
             i += 1
         return mini
     
+    def shellSort(self, a, s):
+        i = 1
+        while i < len(a):
+            p = i
+            j = i - s
+            while j > -1:
+                if a[j] > a[p]:
+                    temp = a[j]
+                    a[j] = a[p]
+                    a[p] = temp
+                j -= s
+                p -= s
+            i += s
+        
+        # invoke self with different shell (work on finding best shell seq)
+        if s == 1:
+            return a
+        else:
+            return self.shellSort(a, s-1)
 # usage
 sorter = Sorter()
 
-# merge sort
+# the sorts
 print sorter.mergeSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 print sorter.quickSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 print sorter.insertionSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 print sorter.selectionSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
+print sorter.shellSort([1, 3, 5, 7, 14 , 3, 4, 6, 8],3)
