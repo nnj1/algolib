@@ -54,5 +54,6 @@ print sorter.mergeSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 print sorter.quickSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 print sorter.insertionSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 print sorter.selectionSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
-print sorter.shellSort([1, 3, 5, 7, 14 , 3, 4, 6, 8], 3) # pass in initial gap size as additional arg
+# pass in initial gap size as additional arg
+print sorter.shellSort([1, 3, 5, 7, 14 , 3, 4, 6, 8], 3)
 ```
