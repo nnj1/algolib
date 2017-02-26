@@ -57,3 +57,33 @@ print sorter.selectionSort([1, 3, 5, 7, 14 , 3, 4, 6, 8])
 # pass in initial gap size as additional arg
 print sorter.shellSort([1, 3, 5, 7, 14 , 3, 4, 6, 8], 3)
 ```
+
+#Matrix Functions
+```python
+# usage and initialization
+matrix1 = Matrix([[1,1,1],[0,0,0],[2,3,4]])
+matrix2 = Matrix([[1,1,1],[1,0,1],[1,1,1]])
+
+# pretty printing
+matrix1.prettyPrint()
+
+# scalar multiplication
+matrix1.scalarMultiply(2)
+
+# addition
+matrix3 = matrix1.add(matrix2)
+
+# multiplication
+matrix4 = matrix3.multiply(matrix2)
+
+# dot product (only works for column and row vectors)
+TODO
+
+# getters and setters
+matrix3.getElement(2,3)
+matrix3.getRow(3)
+matrix3.getColumn(3)
+matrix3.setElement(2,3,thing)
+
+```
+

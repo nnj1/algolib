@@ -82,7 +82,7 @@ matrix3 = matrix1.add(matrix2)
 print "Sum:"
 matrix3.prettyPrint()
 
-print "Element in 3rd row and 3rd column: " + str(matrix3.getElement(3,3))
+print "Element in 2rd row and 3rd column: " + str(matrix3.getElement(2,3))
 print '3rd Row: ' + str(matrix3.getRow(3))
 print '3rd Column: ' + str(matrix3.getColumn(3))
 
