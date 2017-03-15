@@ -1,3 +1,5 @@
+from copy import *
+
 class Matrix:
     def __init__(self, mat, c = 0):
         # Get r and c based on given mat
@@ -17,7 +19,7 @@ class Matrix:
                 i += 1
             i = 0
             while i < mat:
-                self.mat.append(k)
+                self.mat.append(copy(k))
                 i += 1
     def prettyPrint(self):
         for row in self.mat:
